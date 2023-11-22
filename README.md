@@ -14,22 +14,36 @@
 
 ### Xcode Topics
 
-1. <a href="#types">Essentials</a>
+1. [Essentials](#essentials)
 
-2. <a href="#types">References</a>
+1. [References](#references)
 
-3. <a href="#types">Objects</a>
+1. [Objects](#objects)
 
-4. <a href="#types">Arrays</a>
+1. [Arrays](#arrays)
 
 ---
 ---
- <a href="#types">Essentials</a>
+#### Essentials
 
-<a href="#types--primitives">1.1</a>
+<a name="types--configure"></a><a name="1.a. configure a target for your app"></a>
 
-Primitives When you access a primitive type you work directly on its value.
+- [1.a.](#types--configure) ***Configuring***: Xcode determines how to build apps and other products from your project's target information
+
 ```swift
 
 const foo = 1;
+
 ```
+
+<a name="types--target"></a><a name="1.b. target (parts and pieces)"></a>
+
+- [1.b.](#types--target) ***Target***: the `target` contains the tasks required to create executable plus the `settings` to build it, by default.
+<ul type='disc'>the templates have default targets which Xcode configures using the information you provide (you can change the info, as ncessary) 
+[Configuring a new target for your Project](Link)
+```swift
+
+const foo = 1;
+
+```
+
