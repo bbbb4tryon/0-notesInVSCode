@@ -196,63 +196,37 @@ const foo = 1;
 ---
 ### SwiftUI Topics
 
-1. [Essentials](#essentials)
-
-1. [References](#references)
-
-1. [Objects](#objects)
-
-1. [Arrays](#arrays)
+1. [Initial](#initial)
 
 ---
 ---
-#### Essentials
+## Initial
 
-<a name="types--configureSwiftUI"></a><a name="2.a. configure SwiftUI file"></a>
+<a name="types--basicContentView"></a><a name="2.a. basic ContentView"></a>
 
-- [2.a.](#types--configureSwiftUI) ***Create App Interface***: Click the Project Navigator column ``> New > SwiftUI icon`` this is a file type in the second row
-- Then, go to <em>top</em> `Editor > Canvas > Resume`
-
-
-
-
-Trello has a feature called "Card Repeater" that allows for quick creation of multiple cards based on a template. Unfortunately, there isn't a direct way to copy-paste formatted text into Trello to create multiple cards at once. However, I can guide you on how to create multiple cards quickly based on the provided information.
-
-Here's a step-by-step process to efficiently create cards in Trello for your Product Backlog:
-
-1. **Create a Card Template:**
-   - Open your Trello board and create a single card in the "Backlog" list. Name this card "Template" or something similar.
-   - Inside this card, write down the template for your user stories and acceptance criteria in a structured format.
-
-2. **Use Card Repeater:**
-   - Enable the "Card Repeater" Power-Up in Trello if you haven't already. Power-Ups can be added via the board menu on the right sidebar.
-   - Once the Card Repeater Power-Up is enabled, go back to your "Template" card.
-
-3. **Set Up Repeated Cards:**
-   - Click on the card's title and open it.
-   - Click on the card's menu (top right corner of the card) and select "Repeat."
-   - Configure the repeat settings based on how often you want the card to repeat. Adjust the settings to suit your sprint cycle (2-3 days in your case).
-   - Save the settings.
-
-4. **Modify Repeated Cards:**
-   - After setting up the repeated cards, Trello will create copies of the "Template" card in your "Backlog" list according to your configured repeat settings.
-   - Open each new card and modify the content to match specific user stories and acceptance criteria based on your provided information.
-
-5. **Modify Card Titles and Details:**
-   - Rename each card according to the specific user story it represents.
-   - Modify the details within each card to reflect the unique user story and acceptance criteria.
-
-6. **Organize Cards:**
-   - Move the cards to the appropriate lists on your board (e.g., from "Backlog" to "To-Do").
-
-Though this method doesn't allow for direct copy-pasting of formatted text into Trello to create cards, it does provide a quick way to generate multiple cards based on a template. You'll still need to manually modify the content of each card to match the specifics of your user stories and acceptance criteria.
-
-Remember, Trello's Card Repeater functionality can significantly speed up the process of card creation and repetitive tasks, allowing you to focus more on refining the details of each individual card.
-
-
+- [2.a.](#types--basicContentView) ***Snippet of the Basic ContentView***: 
 
 ```swift
+import SwiftUI
 
-const foo = 1;
+struct ContentView: View {
+    var body: some View {
+        VStack{
+            Image(systemName:"mic")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+            
+        }
+            .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
 
 ```
+
