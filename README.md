@@ -286,15 +286,16 @@ API Collections
 
 ### SwiftUI Topics
 
-1. [Initial](#initial)
+1. [Overview](#Overview)
+   i. [basic content view](#basicContentView)
 
 ---
 ---
-## Initial
+## Overview
 
-<a name="types--basicContentView"></a><a name="2.a. basic ContentView"></a>
+<a name="types--basicContentView"></a><a name="i. basic ContentView"></a>
 
-[2.a.](#types--basicContentView) ***Snippet of the Basic ContentView***: 
+[i.](#types--basicContentView) ***Snippet of the Basic ContentView***: 
 
 ```swift
 import SwiftUI
@@ -320,3 +321,7 @@ struct ContentView_Previews: PreviewProvider {
 
 ```
 
+
+<a name="types--basicContentView"></a><a name="ii. basic ContentView"></a>
+
+[ii.](#types--basicContentView) ***Snippet of the Basic ContentView***: 
