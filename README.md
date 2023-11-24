@@ -206,6 +206,7 @@ const foo = 1;
       - <strong>As a result of these changes, the information property list file that ships with your app isn’t identical to the source file in your project.</strong>
    
 
+
 **[⬆ back to top](#table-of-contents)**
 
 
