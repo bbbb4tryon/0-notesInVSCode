@@ -6,9 +6,9 @@
 
 1. [Xcode](#Xcode)
 
-2. [Swift](#Swift)
+1. [Swift](#Swift)
 
-3. [SwiftUI](#SwiftUI)
+1. [SwiftUI](#SwiftUI)
 
   
 ---
@@ -118,11 +118,11 @@ const foo = 1;
 
 ```
 
+
 <a name="types--target"></a><a name="1.b. target (parts and pieces)"></a>
 
 - [1.b.](#types--target) ***Target***: the `target` contains the tasks required to create executable plus the `settings` to build it, by default.
 <ul type='disc'>the templates have default targets which Xcode configures using the information you provide (you can change and [configure a new target](#link) for your Project, as ncessary) 
-
 
 
 <a name="types--buildScheme"></a><a name="1.c. build scheme"></a>
@@ -130,8 +130,6 @@ const foo = 1;
 - [1.c.](#types--buildScheme) ***Build Scheme***: A collection of settings that specify which `targets` to build, which `configuration` to build, and the executable environment for running the product
     * Xcode creates schemes automaticallly, and display it in the toolbar. Click it if youd need to choose a new one, and a pop-up menu list will show
     * You may create your own, to pass additional launch arguments to your app, for example
-
-
 
 <a name="types--runBuildApp"></a><a name="1.d. building an app (or anything else)"></a>
 
@@ -141,18 +139,14 @@ const foo = 1;
     * Before you ship, use a real device --> Simulators work and do a lot, but an actual device is for real condition-testing
 
 
-
 <a name="types--buildApp"></a><a name="1.e. build"></a>
 
 - [1.e.](#types--buildApp) ***Build***: Design and code out your app. Then, choose `Product > Run` or Cmd + R.
 - Xcode attaches your schemes, builds them in the proper sequence
 
-
-
 <a name="types--debugApp"></a><a name="1.f. debug"></a>
 
 -[1.f.](#types--debug) ***Debug***: Enable the process like so `Debug > Debug Executable`, and the debug terminal will appear at the bottom of the console. 
-
 
 
 <a name="types--buildWithoutRunning"></a><a name="1.g. build without running simulator or device"></a>
@@ -160,11 +154,9 @@ const foo = 1;
 - [1.g.](#types--buildWithoutRunning) ***Build Without Running***: To build a scheme <em>without</em> running the app, `Cmd + B` or `Product > Build`
 
 
-
 <a name="types--issueNavigator"></a><a name="1.h. issue navigator"></a>
 
 - [1.h.](#types---issueNavigator) ***Issue Navigator***: If Xcode encounters an error during build, it reports it in the issue navigator and stops. The issue navigator is an icon/option at the top of the editor column. You can enable or disable stopping from the `General` tab in `Preferences > Continue building after errors`. Or stop an in-progress build: `Product > Stop`. 
-
 
 
 <a name="types--workspaces"></a><a name="1.i. workspaces"></a>
@@ -174,7 +166,6 @@ const foo = 1;
 - `File > New > Workspace` Then, in the Project Navigator, click on empty space to "Add files to `workspace`name
 - In that Finder view, select the .xcodeproj you need, click `Add` the project to the workspace
 - * Xcode will automatically build the dependences.
-
 
 
 <a name="types--crossProjectReferences"></a><a name="1.j. cross-project references"></a>
@@ -188,6 +179,32 @@ const foo = 1;
 
 - After you add the cross-project referencem you can refer to outside elements in your project -- from dependencies, to copying files and Link Binaries with Library build phases
 
+
+<a name="types--appInfoPList"></a><a></a name="1.k. app information property list">
+
+- [1.k.](#types--appInfoPList) ***App Information Property List aka Info.plist***
+   + one `Info.plist` per <em>target</em> in the Project folder
+   + Xcode sets most property list keys automatically
+   + find editable information at the target's `General` pane (white one with 'Signing' 'Resource Tags' 'Info' headings)
+   + `Localization` in the Inspector (right side column), select the resources of a region (like language)
+   + Knowledge:
+      - `UIMainStoryboardFile` key specifies main storyboard in an iOS app that uses Storyboard config
+
+   + Xcode sets keys to update/be replaced at build time
+      - ex: `CFBundleIdentifier` updates to value of `$(PRODUCT_BUILD_IDENTIFIER)`
+
+   + Platform- and Device-Specific [<em>Keys</em>](#https://developer.apple.com/documentation/bundleresources/information_property_list/managing_your_app_s_information_property_list):
+      - syntax for the key: [`key name`]-[`platform`]~[`device`]
+      - restricts the value for the key to the platform or device
+      - ex: `UISupportedInterfaceOrientations~ipad` - sets different orientation values for iPad devices
+      - platform and device are optional
+
+   + Why the source and build lists are <em>different</em> 
+      - at build time/whenever you build the app, Xcode ensures that the final file has the correct name and resides in the correct location for the given bundle type 
+      - Xcode uses build settings to perform variable substitution
+      - inserts configurations you specify in other ways: you indicate the deployment target for an iOS app in Xcode’s project editor, translated to `MinimumOSVersion` key that it adds during the copy
+      - <strong>As a result of these changes, the information property list file that ships with your app isn’t identical to the source file in your project.</strong>
+   
 
 **[⬆ back to top](#table-of-contents)**
 
